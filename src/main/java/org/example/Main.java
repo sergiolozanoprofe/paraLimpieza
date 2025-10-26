@@ -2,47 +2,54 @@ package org.example;
 
 import java.util.Scanner;
 
-/**
- * Gestor de usuarios
- * @author Sergio Lozano
- */
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         UserManager manager = new UserManager();
-        Scanner scanner = new Scanner(System.in);
-        int option;
+        int Option = 0;
 
         do {
-            System.out.println("\n=== Gestión de Usuarios ===");
+            System.out.println("");
             System.out.println("1. Añadir usuario");
             System.out.println("2. Buscar usuario");
             System.out.println("3. Listar usuarios");
             System.out.println("0. Salir");
-            System.out.print("Selecciona una opción: ");
-            option = Integer.parseInt(scanner.nextLine());
-
-            switch (option) {
-                case 1 -> {
-                    System.out.print("Nombre de usuario: ");
-                    String username = scanner.nextLine();
+            System.out.print("Elegir: ");
+            try {
+                Option = Integer.parseInt(sc.nextLine());
+            } catch (Exception e) {
+                System.out.println("Invalid input.");
+            }
+            System.out.println("");
+            switch (Option) {
+                case 1:
+                    System.out.print("Nombre del usuario: ");
+                    String name = sc.nextLine();
                     System.out.print("Email: ");
-                    String email = scanner.nextLine();
-                    manager.addUser(new User(username, email));
-                    System.out.println("Usuario añadido correctamente.");
-                }
-                case 2 -> {
+                    String email = sc.nextLine();
+                    manager.addUser(new user(name, email));
+                    break;
+                case 2:
                     System.out.print("Introduce el nombre de usuario: ");
-                    String name = scanner.nextLine();
-                    manager.findUser(name)
+                    String name2 = sc.nextLine();
+                    manager.findUser(name2)
                             .ifPresentOrElse(
                                     System.out::println,
                                     () -> System.out.println("Usuario no encontrado.")
                             );
-                }
-                case 3 -> manager.listUsers();
-                case 0 -> System.out.println("Saliendo...");
-                default -> System.out.println("Opción no válida.");
+
+                case 3:
+                    manager.listUsers();
+                    break;
+                case 0:
+                    System.out.println("Bye!");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
             }
-        } while (option != 0);
+
+        } while (Option != 0);
+
+        sc.close();
     }
 }

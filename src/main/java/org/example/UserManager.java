@@ -5,51 +5,51 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Optional;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.*;
+
 public class UserManager {
-    private static final String FILE = "users.json";
-    private final Gson gson = new Gson();
-    private List<User> users = new ArrayList<>();
+
+    private Gson gson = new Gson();
+    private List<user> users = new ArrayList<>();
 
     public UserManager() {
         load();
     }
 
-    public void addUser(User user) {
-        users.add(user);
+    public void addUser(user u) {
+        if (u == null)
+            return;
+        users.add(u);
         save();
     }
 
-    public Optional<User> findUser(String username) {
+    public Optional<user> findUser(String username) {
         return users.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        if (users.isEmpty()) {
-            System.out.println("No hay usuarios registrados.");
-        } else {
-            users.forEach(System.out::println);
-        }
+        for (user u : users)
+            System.out.println(u);
     }
 
     private void save() {
-        try (FileWriter writer = new FileWriter(FILE)) {
+        try (FileWriter writer = new FileWriter("users.json")) {
             gson.toJson(users, writer);
         } catch (IOException e) {
-            System.err.println("Error guardando usuarios: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     private void load() {
-        try (FileReader reader = new FileReader(FILE)) {
-            Type listType = new TypeToken<ArrayList<User>>(){}.getType();
+        try (FileReader reader = new FileReader("users.json")) {
+            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
             users = gson.fromJson(reader, listType);
             if (users == null) users = new ArrayList<>();
         } catch (IOException e) {
