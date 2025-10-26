@@ -8,10 +8,10 @@ public class UserManagerTest {
     @Test
     void testAddAndFindUser() {
         UserManager manager = new UserManager();
-        User user = new User("juan", "juan@example.com");
+        user user = new user("juan", "juan@example.com");
         manager.addUser(user);
 
         assertTrue(manager.findUser("juan").isPresent());
-        assertEquals("juan@example.com", manager.findUser("juan").get().getEmail());
+        assertEquals("juan@example.com", manager.findUser("juan").get().getemail());
     }
 }
