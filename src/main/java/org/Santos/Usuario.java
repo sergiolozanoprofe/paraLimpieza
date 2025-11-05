@@ -1,6 +1,6 @@
 package org.Santos;
 
-public class user {
+public class Usuario {
 
     public static String COMPANY_NAME = "OpenAI";
 
@@ -8,16 +8,16 @@ public class user {
     private String email;
     private int age;
 
-    public user(String username, String email) {
-        this.username = username;
-        this.email = email;
+    public Usuario(String NombreUsuario, String Email) {
+        this.username = NombreUsuario;
+        this.email = Email;
     }
 
-    public String getUsername(){
+    public String obtenerNombre(){
         return username;
     }
 
-    public String getemail() {
+    public String obtenerMail() {
         return email;
     }
 
