@@ -27,19 +27,14 @@ public class Main {
             System.out.println("");
             switch (Option) {
                 case 1:
-                    System.out.print(Constantes.INPUT_NAME);
-                    String name = sc.nextLine();
-                    System.out.print("Email: ");
-                    String email = sc.nextLine();
-                    manager.addUser(new Usuario(name, email));
+                    crearUsuario(sc, manager);
                     break;
                 case 2:
                     System.out.print(Constantes.INPUT_SEARCH);
                     String name2 = sc.nextLine();
                     manager.findUser(name2)
                             .ifPresentOrElse(
-                                    System.out::println,
-                                    () -> System.out.println(Constantes.USER_NOT_FOUND)
+                                    System.out::println, () -> System.out.println(Constantes.USER_NOT_FOUND)
                             );
 
                 case 3:
@@ -55,5 +50,14 @@ public class Main {
         } while (Option != 0);
 
         sc.close();
+    }
+
+    private static void crearUsuario(Scanner sc, AdministradorUsuarios manager) {
+        System.out.print(Constantes.INPUT_NAME);
+        String name = sc.nextLine();
+        System.out.print(Constantes.INPUT_EMAIL);
+        String email = sc.nextLine();
+        manager.addUser(new Usuario(name, email));
+        return;
     }
 }
