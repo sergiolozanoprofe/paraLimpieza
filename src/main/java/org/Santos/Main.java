@@ -1,4 +1,4 @@
-package org.example;
+package org.Santos;
 
 import java.util.Scanner;
 

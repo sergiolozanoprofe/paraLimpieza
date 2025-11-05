@@ -1,4 +1,4 @@
-package org.example;
+package org.Santos;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
