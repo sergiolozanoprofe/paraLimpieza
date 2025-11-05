@@ -4,24 +4,24 @@ public class Usuario {
 
     public static String COMPANY_NAME = "OpenAI";
 
-    private String username;
-    private String email;
+    private String nombreusuario;
+    private String Email;
     private int age;
 
     public Usuario(String NombreUsuario, String Email) {
-        this.username = NombreUsuario;
-        this.email = Email;
+        this.nombreusuario = NombreUsuario;
+        this.Email = Email;
     }
 
     public String obtenerNombre(){
-        return username;
+        return nombreusuario;
     }
 
     public String obtenerMail() {
-        return email;
+        return Email;
     }
 
     public String toString(){
-        return "User: " + username + " (" + email + ")";
+        return "User: " + nombreusuario + " (" + Email + ")";
     }
 }
