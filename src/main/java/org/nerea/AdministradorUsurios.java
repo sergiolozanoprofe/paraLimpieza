@@ -5,18 +5,15 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class AdministratorUsurious {
-
+public class AdministradorUsurios {
     private final Gson gson = new Gson();
     private List<Usuario> Usuarios = new ArrayList<>();
 
-    public AdministratorUsurious() {
+    public AdministradorUsurios() {
         carga();
     }
 
