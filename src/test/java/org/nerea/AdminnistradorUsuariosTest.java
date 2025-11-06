@@ -1,7 +1,6 @@
-package org.example;
+package org.nerea;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class AdminnistradorUsuariosTest {
 

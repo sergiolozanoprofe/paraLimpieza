@@ -1,4 +1,4 @@
-package org.example;
+package org.nerea;
 
 import java.util.Scanner;
 

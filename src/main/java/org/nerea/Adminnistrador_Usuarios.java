@@ -1,4 +1,4 @@
-package org.example;
+package org.nerea;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
