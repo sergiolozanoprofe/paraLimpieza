@@ -10,15 +10,15 @@ public class Main {
 
         do {
             System.out.println(" ");
-            System.out.println("1. Añadir usuario");
-            System.out.println("2. Buscar usuario");
-            System.out.println("3. Listar usuarios");
-            System.out.println("0. Salir");
-            System.out.print("Elegir: ");
+            System.out.println(Constantes.OPCION_1);
+            System.out.println(Constantes.OPCION_2);
+            System.out.println(Constantes.OPCION_3);
+            System.out.println(Constantes.OPCION_0);
+            System.out.print(Constantes.ELEGIR);
             try {
                 opcion = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Invalid input.");
+                System.out.println(Constantes.ENTRADA_INVALIDA);
             }
             System.out.println(" ");
             switch (opcion) {
@@ -32,11 +32,11 @@ public class Main {
                 case 3:
                     manager.listaUsuarios();
                     break;
-                case 0:
-                    System.out.println("Bye!");
+                case Constantes.OPCION_SALIR :
+                    System.out.println(Constantes.ADIOS);
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println(Constantes.OPCION_INVALIDA);
             }
 
         } while (opcion != 0);
@@ -45,20 +45,20 @@ public class Main {
     }
 
     private static void buscarUsuario(Scanner sc, Adminnistrador_Usuarios manager) {
-        System.out.print("Introduce el nombre de usuario: ");
-        String name2 = sc.nextLine();
-        manager.buscarUsuario(name2)
+        System.out.print(Constantes.INTRODUCE_NOMBRE);
+        String nombre2 = sc.nextLine();
+        manager.buscarUsuario(nombre2)
                 .ifPresentOrElse(
                         System.out::println,
-                        () -> System.out.println("Usuario no encontrado.")
+                        () -> System.out.println(Constantes.USUARIO_NO_ENCONTRADO)
                 );
     }
 
     private static void aniadirUsuario(Scanner sc, Adminnistrador_Usuarios manager) {
-        System.out.print("Nombre del usuario: ");
-        String name = sc.nextLine();
-        System.out.print("Email: ");
-        String email = sc.nextLine();
-        manager.aniadirUsuario(new Usuario(name, email));
+        System.out.print(Constantes.NOMBRE_USUARIO);
+        String nombre = sc.nextLine();
+        System.out.print(Constantes.EMAIL);
+        String correoElectronico = sc.nextLine();
+        manager.aniadirUsuario(new Usuario(nombre, correoElectronico));
     }
 }
