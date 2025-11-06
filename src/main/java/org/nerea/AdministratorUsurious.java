@@ -6,18 +6,17 @@ import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-import java.util.Optional;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class Adminnistrador_Usuarios {
+public class AdministratorUsurious {
 
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     private List<Usuario> Usuarios = new ArrayList<>();
 
-    public Adminnistrador_Usuarios() {
+    public AdministratorUsurious() {
         carga();
     }
 
@@ -30,7 +29,7 @@ public class Adminnistrador_Usuarios {
 
     public Optional<Usuario> buscarUsuario(String nombreUsuario) {
         return Usuarios.stream()
-                .filter(u -> u.getNombreUsuario().equalsIgnoreCase(nombreUsuario))
+                .filter(u -> u.nombreUsuario().equalsIgnoreCase(nombreUsuario))
                 .findFirst();
     }
 
@@ -42,8 +41,8 @@ public class Adminnistrador_Usuarios {
     private void guardar() {
         try (FileWriter writer = new FileWriter("Usuarios.json")) {
             gson.toJson(Usuarios, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
+
         }
     }
 

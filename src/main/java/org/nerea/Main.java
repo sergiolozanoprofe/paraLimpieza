@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Adminnistrador_Usuarios manager = new Adminnistrador_Usuarios();
+        AdministratorUsurious manager = new AdministratorUsurious();
         int opcion = 0;
 
         do {
@@ -44,7 +44,7 @@ public class Main {
         sc.close();
     }
 
-    private static void buscarUsuario(Scanner sc, Adminnistrador_Usuarios manager) {
+    private static void buscarUsuario(Scanner sc, AdministratorUsurious manager) {
         System.out.print(Constantes.INTRODUCE_NOMBRE);
         String nombre2 = sc.nextLine();
         manager.buscarUsuario(nombre2)
@@ -54,7 +54,7 @@ public class Main {
                 );
     }
 
-    private static void aniadirUsuario(Scanner sc, Adminnistrador_Usuarios manager) {
+    private static void aniadirUsuario(Scanner sc, AdministratorUsurious manager) {
         System.out.print(Constantes.NOMBRE_USUARIO);
         String nombre = sc.nextLine();
         System.out.print(Constantes.EMAIL);

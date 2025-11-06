@@ -6,7 +6,7 @@ public class AdminnistradorUsuariosTest {
 
     @Test
     void testAddAndFindUser() {
-        Adminnistrador_Usuarios manager = new Adminnistrador_Usuarios();
+        AdministratorUsurious manager = new AdministratorUsurious();
         Usuario Usuario = new Usuario("juan", "juan@example.com");
         manager.aniadirUsuario(Usuario);
 
