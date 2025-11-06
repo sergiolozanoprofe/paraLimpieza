@@ -9,7 +9,7 @@ public class Main {
         int opcion = 0;
 
         do {
-            System.out.println("");
+            System.out.println(" ");
             System.out.println("1. Añadir usuario");
             System.out.println("2. Buscar usuario");
             System.out.println("3. Listar usuarios");
@@ -20,23 +20,14 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Invalid input.");
             }
-            System.out.println("");
+            System.out.println(" ");
             switch (opcion) {
                 case 1:
-                    System.out.print("Nombre del usuario: ");
-                    String name = sc.nextLine();
-                    System.out.print("Email: ");
-                    String email = sc.nextLine();
-                    manager.aniadirUsuario(new Usuario(name, email));
+                    aniadirUsuario(sc, manager);
                     break;
                 case 2:
-                    System.out.print("Introduce el nombre de usuario: ");
-                    String name2 = sc.nextLine();
-                    manager.buscarUsuario(name2)
-                            .ifPresentOrElse(
-                                    System.out::println,
-                                    () -> System.out.println("Usuario no encontrado.")
-                            );
+                    buscarUsuario(sc, manager);
+                    break;
 
                 case 3:
                     manager.listaUsuarios();
@@ -51,5 +42,23 @@ public class Main {
         } while (opcion != 0);
 
         sc.close();
+    }
+
+    private static void buscarUsuario(Scanner sc, Adminnistrador_Usuarios manager) {
+        System.out.print("Introduce el nombre de usuario: ");
+        String name2 = sc.nextLine();
+        manager.buscarUsuario(name2)
+                .ifPresentOrElse(
+                        System.out::println,
+                        () -> System.out.println("Usuario no encontrado.")
+                );
+    }
+
+    private static void aniadirUsuario(Scanner sc, Adminnistrador_Usuarios manager) {
+        System.out.print("Nombre del usuario: ");
+        String name = sc.nextLine();
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+        manager.aniadirUsuario(new Usuario(name, email));
     }
 }
