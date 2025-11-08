@@ -25,20 +25,11 @@ public class Main {
             System.out.println("");
             switch (Option) {
                 case 1:
-                    System.out.print(Constantes.NOMBRE_DEL_USUARIO);
-                    String name = sc.nextLine();
-                    System.out.print(Constantes.EMAIL);
-                    String email = sc.nextLine();
-                    manager.addUser(new usuario(name, email));
+                    Lista_caso_1(sc, manager);
                     break;
                 case 2:
-                    System.out.print(Constantes.NOMBRE_DE_USUARIO);
-                    String name2 = sc.nextLine();
-                    manager.findUser(name2)
-                            .ifPresentOrElse(
-                                    System.out::println,
-                                    () -> System.out.println(Constantes.USUARIO_NO_ENCONTRADO)
-                            );
+                    Lista_caso_2(sc, manager);
+                    break;
 
                 case 3:
                     manager.listUsers();
@@ -54,4 +45,25 @@ public class Main {
 
         sc.close();
     }
+
+    private static void Lista_caso_2(Scanner sc, Usuario_Jefe manager) {
+        System.out.print(Constantes.NOMBRE_DE_USUARIO);
+        String name2 = sc.nextLine();
+        manager.findUser(name2)
+                .ifPresentOrElse(
+                        System.out::println,
+                        () -> System.out.println(Constantes.USUARIO_NO_ENCONTRADO)
+                );
+    }
+
+    private static void Lista_caso_1(Scanner sc, Usuario_Jefe manager) {
+        System.out.print(Constantes.NOMBRE_DEL_USUARIO);
+        String name = sc.nextLine();
+        System.out.print(Constantes.EMAIL);
+        String email = sc.nextLine();
+        manager.addUser(new usuario(name, email));
+    }
+
+
+
 }
