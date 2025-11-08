@@ -1,4 +1,4 @@
-package org.example;
+package org.Ion_Madan;
 
 import java.util.Scanner;
 
