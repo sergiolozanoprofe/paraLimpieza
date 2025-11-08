@@ -1,4 +1,5 @@
-package org.Ion_Madan;
+package org.imadan;
+
 
 import java.util.Scanner;
 
@@ -8,23 +9,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Usuario_Jefe manager = new Usuario_Jefe();
-        int Option = 0;
+        usuariojefe manager = new usuariojefe();
+        int option = 0;
 
         do {
-            System.out.println("");
-            System.out.println(Constantes.AÑADIR_USUARIO);
+            System.out.println(Constantes.ANIADIR_USUARIO);
             System.out.println(Constantes.BUSCAR_USUARIO);
             System.out.println(Constantes.LISTAR_USUARIOS);
             System.out.println(Constantes.SALIR);
             System.out.print(Constantes.ELEGIR);
             try {
-                Option = Integer.parseInt(sc.nextLine());
+                option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
                 System.out.println(Constantes.INVALID_INPUT + ".");
             }
-            System.out.println("");
-            switch (Option) {
+            switch (option) {
                 case 1:
                     Lista_caso_1(sc, manager);
                     break;
@@ -42,12 +41,12 @@ public class Main {
                     System.out.println(Constantes.INVALID_OPTION);
             }
 
-        } while (Option != 0);
+        } while (option != 0);
 
         sc.close();
     }
 
-    private static void Lista_caso_2(Scanner sc, Usuario_Jefe manager) {
+    private static void Lista_caso_2(Scanner sc, usuariojefe manager) {
         System.out.print(Constantes.NOMBRE_DE_USUARIO);
         String name2 = sc.nextLine();
         manager.findUser(name2)
@@ -57,7 +56,7 @@ public class Main {
                 );
     }
 
-    private static void Lista_caso_1(Scanner sc, Usuario_Jefe manager) {
+    private static void Lista_caso_1(Scanner sc, usuariojefe manager) {
         System.out.print(Constantes.NOMBRE_DEL_USUARIO);
         String name = sc.nextLine();
         System.out.print(Constantes.EMAIL);

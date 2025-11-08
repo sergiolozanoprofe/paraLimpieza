@@ -1,4 +1,4 @@
-package org.Ion_Madan;
+package org.imadan;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -12,12 +12,12 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class Usuario_Jefe {
+public class usuariojefe {
 
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     private List<usuario> usuarios = new ArrayList<>();
 
-    public Usuario_Jefe() {
+    public usuariojefe() {
         load();
     }
 
@@ -30,7 +30,7 @@ public class Usuario_Jefe {
 
     public Optional<usuario> findUser(String nombre_usuario) {
         return usuarios.stream()
-                .filter(u -> u.getNombre_usuario().equalsIgnoreCase(nombre_usuario))
+                .filter(u -> u.getNombreUsuario().equalsIgnoreCase(nombre_usuario))
                 .findFirst();
     }
 
