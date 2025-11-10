@@ -55,7 +55,7 @@ public class Main {
         String nombre = sc.nextLine();
         System.out.print(Constantes.CORREO_ELECTRONICO);
         String correo = sc.nextLine();
-        gestor.añadirUsuario(new usuario(nombre, correo));
+        gestor.añadirUsuario(new Usuario(nombre, correo));
     }
 
     private static void buscarusuario(Scanner sc, GestorUsuarios gestor) {

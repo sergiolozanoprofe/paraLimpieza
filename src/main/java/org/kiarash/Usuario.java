@@ -1,21 +1,21 @@
 package org.kiarash;
 
-public class usuario {
+public class Usuario {
     public static String NOMBRE_EMPRESA = "OpenAI";
 
     private String nombreUsuario;
     private String correo;
 
-    public usuario(String nombreUsuario, String correo) {
+    public Usuario(String nombreUsuario, String correo) {
         this.nombreUsuario = nombreUsuario;
         this.correo = correo;
     }
 
-    public String getNombreusuario() {
+    public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-    public String getcorreo() {
+    public String getCorreo() {
         return correo;
     }
 

@@ -13,15 +13,15 @@ import java.util.Optional;
 
 public class GestorUsuarios {
     private Gson gson = new Gson();
-    private List<Usuario> usuario = new ArrayList<>();
+    private List<Usuario> usuarios = new ArrayList<>();
 
     public GestorUsuarios() {
         cargar();
     }
 
-    public void añadirUsuario(usuario usuario) {
+    public void añadirUsuario(Usuario usuario) {
         if (usuario == null) return;
-        usuario.add(usuario);
+        usuarios.add(usuario);
         guardar();
     }
 
