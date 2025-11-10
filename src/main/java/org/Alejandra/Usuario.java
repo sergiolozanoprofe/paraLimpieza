@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Usuario {
 
-    public static String COMPANY_NAME = "OpenAI";
+    public static String COMPANY_NAME = Constantes.NOMBRE_EMPRESA;
 
     private String username;
     private String email;
@@ -23,7 +23,8 @@ public class Usuario {
         return email;
     }
 
-    public String toString(){
-        return "User: " + username + " (" + email + ")";
+    public String toString() {
+        return Constantes.TEXTO_USUARIO + username + Constantes.PARENTESIS_ABIERTO
+                + email + Constantes.PARENTESIS_CERRADO;
     }
 }

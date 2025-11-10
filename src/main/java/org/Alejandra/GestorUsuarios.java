@@ -43,16 +43,18 @@ public class GestorUsuarios {
         try (FileWriter writer = new FileWriter("users.json")) {
             gson.toJson(users, writer);
         } catch (IOException e) {
+            System.out.println(Constantes.ERROR_GUARDAR);
             e.printStackTrace();
         }
     }
 
     private void load() {
-        try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();
+        try (FileReader reader = new FileReader(Constantes.ARCHIVO_USUARIOS)) {
+            Type listType = new TypeToken<ArrayList<Usuario>>() {}.getType();
             users = gson.fromJson(reader, listType);
             if (users == null) users = new ArrayList<>();
         } catch (IOException e) {
+            System.out.println(Constantes.ERROR_CARGAR);
             users = new ArrayList<>();
         }
     }
