@@ -12,30 +12,30 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class UserManager {
+public class GestorUsuarios {
 
     private Gson gson = new Gson();
-    private List<user> users = new ArrayList<>();
+    private List<Usuario> users = new ArrayList<>();
 
-    public UserManager() {
+    public GestorUsuarios() {
         load();
     }
 
-    public void addUser(user u) {
+    public void agregarUsuario(Usuario u) {
         if (u == null)
             return;
         users.add(u);
         save();
     }
 
-    public Optional<user> findUser(String username) {
+    public Optional<Usuario> buscarUsuario(String username) {
         return users.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
-    public void listUsers() {
-        for (user u : users)
+    public void listarUsuarios() {
+        for (Usuario u : users)
             System.out.println(u);
     }
 
@@ -49,7 +49,7 @@ public class UserManager {
 
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();
             users = gson.fromJson(reader, listType);
             if (users == null) users = new ArrayList<>();
         } catch (IOException e) {

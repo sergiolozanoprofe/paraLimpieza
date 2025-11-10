@@ -7,11 +7,11 @@ public class UserManagerTest {
 
     @Test
     void testAddAndFindUser() {
-        UserManager manager = new UserManager();
-        user user = new user("juan", "juan@example.com");
-        manager.addUser(user);
+        GestorUsuarios manager = new GestorUsuarios();
+        Usuario user = new Usuario("juan", "juan@example.com");
+        manager.agregarUsuario(user);
 
-        assertTrue(manager.findUser("juan").isPresent());
-        assertEquals("juan@example.com", manager.findUser("juan").get().getemail());
+        assertTrue(manager.buscarUsuario("juan").isPresent());
+        assertEquals("juan@example.com", manager.buscarUsuario("juan").get().getemail());
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        UserManager manager = new UserManager();
+        GestorUsuarios gestor = new GestorUsuarios();
         int Option = 0;
 
         do {
@@ -27,19 +27,19 @@ public class Main {
                     String name = sc.nextLine();
                     System.out.print("Email: ");
                     String email = sc.nextLine();
-                    manager.addUser(new user(name, email));
+                    gestor.agregarUsuario(new Usuario(name, email));
                     break;
                 case 2:
                     System.out.print("Introduce el nombre de usuario: ");
                     String name2 = sc.nextLine();
-                    manager.findUser(name2)
+                    gestor.buscarUsuario(name2)
                             .ifPresentOrElse(
                                     System.out::println,
                                     () -> System.out.println("Usuario no encontrado.")
                             );
 
                 case 3:
-                    manager.listUsers();
+                    gestor.listarUsuarios();
                     break;
                 case 0:
                     System.out.println("Bye!");
