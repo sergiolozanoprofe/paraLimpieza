@@ -25,20 +25,10 @@ public class Main {
             System.out.println("");
             switch (Option) {
                 case 1:
-                    System.out.print("Nombre del usuario: ");
-                    String name = sc.nextLine();
-                    System.out.print("Email: ");
-                    String email = sc.nextLine();
-                    gestor.agregarUsuario(new Usuario(name, email));
+                    procesarOpcion1(sc, gestor);
                     break;
                 case 2:
-                    System.out.print("Introduce el nombre de usuario: ");
-                    String name2 = sc.nextLine();
-                    gestor.buscarUsuario(name2)
-                            .ifPresentOrElse(
-                                    System.out::println,
-                                    () -> System.out.println("Usuario no encontrado.")
-                            );
+                    procesarOpcion2(sc, gestor);
 
                 case 3:
                     gestor.listarUsuarios();
@@ -53,5 +43,23 @@ public class Main {
         } while (Option != 0);
 
         sc.close();
+    }
+
+    private static void procesarOpcion2(Scanner sc, GestorUsuarios gestor) {
+        System.out.print("Introduce el nombre de usuario: ");
+        String name2 = sc.nextLine();
+        gestor.buscarUsuario(name2)
+                .ifPresentOrElse(
+                        System.out::println,
+                        () -> System.out.println("Usuario no encontrado.")
+                );
+    }
+
+    private static void procesarOpcion1(Scanner sc, GestorUsuarios gestor) {
+        System.out.print("Nombre del usuario: ");
+        String name = sc.nextLine();
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+        gestor.agregarUsuario(new Usuario(name, email));
     }
 }
