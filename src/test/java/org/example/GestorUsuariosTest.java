@@ -1,11 +1,11 @@
 package org.example;
 
-import org.MikeRincones.GestorUsuarios;
-import org.MikeRincones.usuario;
+import org.mikerincones.GestorUsuarios;
+import org.mikerincones.usuario;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GestorUsuariosTest {
+class GestorUsuariosTest {
 
     @Test
     void testAddAndFindUser() {

@@ -1,8 +1,8 @@
-package org.MikeRincones;
+package org.mikerincones;
 
-public class usuario {
+public class Usuario {
 
-    public static String COMPANY_NAME = "OpenAI";
+    public static final String COMPANY_NAME = "OpenAI";
 
     private String username;
     private String email;

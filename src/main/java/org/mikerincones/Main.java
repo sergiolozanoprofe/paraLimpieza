@@ -1,4 +1,4 @@
-package org.MikeRincones;
+package org.mikerincones;
 
 import java.util.Scanner;
 
@@ -10,8 +10,8 @@ public class Main {
         int opcion = 0;
 
         do {
-            System.out.println(Constantes.ESPACIO);
-            System.out.println(Constantes.AÑADIR_USUARIO);
+            System.out.println(Constantes.ESPACIOINIC);
+            System.out.println(Constantes.ANADIR_USUARIO);
             System.out.println(Constantes.BUSCAR_USUARIO);
             System.out.println(Constantes.LISTAR_USUARIOS);
             System.out.println(Constantes.SALIR);
@@ -24,7 +24,7 @@ public class Main {
             System.out.println(Constantes.ESPACIO);
             switch (opcion) {
                 case 1:
-                    AñadirUsuario(sc, gestor);
+                    AnadirUsuario(sc, gestor);
                     break;
                 case 2:
                     BuscarUsuario(sc, gestor);
@@ -55,7 +55,7 @@ public class Main {
                 );
     }
 
-    private static void AñadirUsuario(Scanner sc, GestorUsuarios gestor) {
+    private static void AnadirUsuario(Scanner sc, GestorUsuarios gestor) {
         System.out.print(Constantes.NOMBRE_DEL_USUARIO);
         String nombre = sc.nextLine();
         System.out.print(Constantes.EMAIL);
