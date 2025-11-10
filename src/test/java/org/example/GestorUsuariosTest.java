@@ -1,14 +1,13 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class UserManagerTest {
+public class GestorUsuariosTest {
 
     @Test
     void testAddAndFindUser() {
-        UserManager manager = new UserManager();
-        user user = new user("juan", "juan@example.com");
+        GestorUsuarios manager = new GestorUsuarios();
+        Usuario user = new Usuario("juan", "juan@example.com");
         manager.addUser(user);
 
         assertTrue(manager.findUser("juan").isPresent());
