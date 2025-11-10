@@ -1,5 +1,7 @@
 package org.example;
 
+import org.MikeRincones.GestorUsuarios;
+import org.MikeRincones.usuario;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
