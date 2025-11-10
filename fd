@@ -1,0 +1,169 @@
+[1mdiff --git a/src/main/java/org/example/GestorUsuarios.java b/src/main/java/org/example/GestorUsuarios.java[m
+[1mdeleted file mode 100644[m
+[1mindex eb5e9b4..0000000[m
+[1m--- a/src/main/java/org/example/GestorUsuarios.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,59 +0,0 @@[m
+[31m-package org.Jorge;[m
+[31m-[m
+[31m-import com.google.gson.Gson;[m
+[31m-import com.google.gson.reflect.TypeToken;[m
+[31m-[m
+[31m-import java.io.FileReader;[m
+[31m-import java.io.FileWriter;[m
+[31m-[m
+[31m-import java.util.Optional;[m
+[31m-[m
+[31m-import java.io.IOException;[m
+[31m-import java.lang.reflect.Type;[m
+[31m-import java.util.*;[m
+[31m-[m
+[31m-public class GestorUsuarios {[m
+[31m-[m
+[31m-    private Gson gson = new Gson();[m
+[31m-    private List<Usuario> users = new ArrayList<>();[m
+[31m-[m
+[31m-    public GestorUsuarios() {[m
+[31m-        load();[m
+[31m-    }[m
+[31m-[m
+[31m-    public void agregarUsuario(Usuario u) {[m
+[31m-        if (u == null)[m
+[31m-            return;[m
+[31m-        users.add(u);[m
+[31m-        save();[m
+[31m-    }[m
+[31m-[m
+[31m-    public Optional<Usuario> buscarUsuario(String username) {[m
+[31m-        return users.stream()[m
+[31m-                .filter(u -> u.getUsername().equalsIgnoreCase(username))[m
+[31m-                .findFirst();[m
+[31m-    }[m
+[31m-[m
+[31m-    public void listarUsuarios() {[m
+[31m-        for (Usuario u : users)[m
+[31m-            System.out.println(u);[m
+[31m-    }[m
+[31m-[m
+[31m-    private void save() {[m
+[31m-        try (FileWriter writer = new FileWriter("users.json")) {[m
+[31m-            gson.toJson(users, writer);[m
+[31m-        } catch (IOException e) {[m
+[31m-            e.printStackTrace();[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-    private void load() {[m
+[31m-        try (FileReader reader = new FileReader("users.json")) {[m
+[31m-            Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();[m
+[31m-            users = gson.fromJson(reader, listType);[m
+[31m-            if (users == null) users = new ArrayList<>();[m
+[31m-        } catch (IOException e) {[m
+[31m-            users = new ArrayList<>();[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java[m
+[1mdeleted file mode 100644[m
+[1mindex 296cc8f..0000000[m
+[1m--- a/src/main/java/org/example/Main.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,55 +0,0 @@[m
+[31m-package org.Jorge;[m
+[31m-[m
+[31m-import java.util.Scanner;[m
+[31m-[m
+[31m-public class Main {[m
+[31m-    public static void main(String[] args) {[m
+[31m-        Scanner sc = new Scanner(System.in);[m
+[31m-        GestorUsuarios gestor = new GestorUsuarios();[m
+[31m-        int Option = 0;[m
+[31m-[m
+[31m-        do {[m
+[31m-            System.out.println("");[m
+[31m-            System.out.println("1. Añadir usuario");[m
+[31m-            System.out.println("2. Buscar usuario");[m
+[31m-            System.out.println("3. Listar usuarios");[m
+[31m-            System.out.println("0. Salir");[m
+[31m-            System.out.print("Elegir: ");[m
+[31m-            try {[m
+[31m-                Option = Integer.parseInt(sc.nextLine());[m
+[31m-            } catch (Exception e) {[m
+[31m-                System.out.println("Invalid input.");[m
+[31m-            }[m
+[31m-            System.out.println("");[m
+[31m-            switch (Option) {[m
+[31m-                case 1:[m
+[31m-                    System.out.print("Nombre del usuario: ");[m
+[31m-                    String name = sc.nextLine();[m
+[31m-                    System.out.print("Email: ");[m
+[31m-                    String email = sc.nextLine();[m
+[31m-                    gestor.agregarUsuario(new Usuario(name, email));[m
+[31m-                    break;[m
+[31m-                case 2:[m
+[31m-                    System.out.print("Introduce el nombre de usuario: ");[m
+[31m-                    String name2 = sc.nextLine();[m
+[31m-                    gestor.buscarUsuario(name2)[m
+[31m-                            .ifPresentOrElse([m
+[31m-                                    System.out::println,[m
+[31m-                                    () -> System.out.println("Usuario no encontrado.")[m
+[31m-                            );[m
+[31m-[m
+[31m-                case 3:[m
+[31m-                    gestor.listarUsuarios();[m
+[31m-                    break;[m
+[31m-                case 0:[m
+[31m-                    System.out.println("Bye!");[m
+[31m-                    break;[m
+[31m-                default:[m
+[31m-                    System.out.println("Invalid option.");[m
+[31m-            }[m
+[31m-[m
+[31m-        } while (Option != 0);[m
+[31m-[m
+[31m-        sc.close();[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/src/main/java/org/example/Usuario.java b/src/main/java/org/example/Usuario.java[m
+[1mdeleted file mode 100644[m
+[1mindex 950fe14..0000000[m
+[1m--- a/src/main/java/org/example/Usuario.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,27 +0,0 @@[m
+[31m-package org.Jorge;[m
+[31m-[m
+[31m-public class Usuario {[m
+[31m-[m
+[31m-    public static String COMPANY_NAME = "OpenAI";[m
+[31m-[m
+[31m-    private String username;[m
+[31m-    private String email;[m
+[31m-    private int age;[m
+[31m-[m
+[31m-    public Usuario(String username, String email) {[m
+[31m-        this.username = username;[m
+[31m-        this.email = email;[m
+[31m-    }[m
+[31m-[m
+[31m-    public String getUsername(){[m
+[31m-        return username;[m
+[31m-    }[m
+[31m-[m
+[31m-    public String getemail() {[m
+[31m-        return email;[m
+[31m-    }[m
+[31m-[m
+[31m-    public String toString(){[m
+[31m-        return "User: " + username + " (" + email + ")";[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/src/test/java/org/example/UserManagerTest.java b/src/test/java/org/example/UserManagerTest.java[m
+[1mindex 4f66b0b..d3ee6c1 100644[m
+[1m--- a/src/test/java/org/example/UserManagerTest.java[m
+[1m+++ b/src/test/java/org/example/UserManagerTest.java[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-package org.Jorge;[m
+[32m+[m[32mpackage org.Jorge;[m
+ [m
+ import org.junit.jupiter.api.Test;[m
+ import static org.junit.jupiter.api.Assertions.*;[m

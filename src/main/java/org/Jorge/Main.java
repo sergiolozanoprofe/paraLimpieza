@@ -1,4 +1,4 @@
-package org.example;
+kage org.example;
 
 import java.util.Scanner;
 

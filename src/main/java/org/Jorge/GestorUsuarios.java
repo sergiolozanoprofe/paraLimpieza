@@ -1,4 +1,4 @@
-package org.example;
+kage org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
