@@ -1,5 +1,7 @@
 kage org.example;
 
+import org.Jorge.Constantes;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,11 +12,11 @@ public class Main {
 
         do {
             System.out.println("");
-            System.out.println("1. Añadir usuario");
-            System.out.println("2. Buscar usuario");
-            System.out.println("3. Listar usuarios");
-            System.out.println("0. Salir");
-            System.out.print("Elegir: ");
+            System.out.println(Constantes.Añadir);
+            System.out.println(Constantes.Buscar);
+            System.out.println(Constantes.Listar);
+            System.out.println(Constantes.Salir);
+            System.out.print(Constantes.Elegir);
             try {
                 Option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
