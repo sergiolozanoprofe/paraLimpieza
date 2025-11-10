@@ -2,7 +2,6 @@ package org.kiarash;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,19 +9,25 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 public class GestorUsuarios {
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     private List<Usuario> usuarios = new ArrayList<>();
+    private static final Logger LOGGER = Logger.getLogger(GestorUsuarios.class.getName());
 
     public GestorUsuarios() {
         cargar();
     }
 
     public void añadirUsuario(Usuario usuario) {
-        if (usuario == null) return;
+        if (usuario == null) {
+            LOGGER.warning("Intento de añadir usuario nulo");
+            return;
+        }
         usuarios.add(usuario);
         guardar();
+        LOGGER.info("Usuario añadido: " + usuario.getNombreUsuario());
     }
 
     public Optional<Usuario> buscarUsuario(String nombreUsuario) {
@@ -32,6 +37,10 @@ public class GestorUsuarios {
     }
 
     public void listarUsuarios() {
+        if (usuarios.isEmpty()) {
+            System.out.println("No hay usuarios registrados.");
+            return;
+        }
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
         }
@@ -41,7 +50,7 @@ public class GestorUsuarios {
         try (FileWriter escritor = new FileWriter(Constantes.ARCHIVO_USUARIOS)) {
             gson.toJson(usuarios, escritor);
         } catch (IOException e) {
-            System.err.println(Constantes.ERROR_ESCRITURA);
+            LOGGER.severe(Constantes.ERROR_ESCRITURA + ": " + e.getMessage());
         }
     }
 
@@ -51,6 +60,7 @@ public class GestorUsuarios {
             usuarios = gson.fromJson(lector, tipoLista);
             if (usuarios == null) usuarios = new ArrayList<>();
         } catch (IOException e) {
+            LOGGER.info(Constantes.ERROR_LECTURA + ": " + e.getMessage());
             usuarios = new ArrayList<>();
         }
     }
