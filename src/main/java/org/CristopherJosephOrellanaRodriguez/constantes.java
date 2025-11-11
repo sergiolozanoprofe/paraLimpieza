@@ -1,7 +1,7 @@
 package org.CristopherJosephOrellanaRodriguez;
 
 public class constantes {
-    public static final String AÑADIR_USUARIO = "1. Añadir usuario";
+    public static final String ANADIR_USUARIO = "1. Añadir usuario";
     public static final String BUSCAR_USUARIO = "2. Buscar usuario";
     public static final String LISTAR_USUARIOS = "3. Listar usuarios";
     public static final String SALIR = "0. Salir";
