@@ -1,4 +1,4 @@
-package org.example;
+package org.GianC;
 
 import java.util.Scanner;
 
