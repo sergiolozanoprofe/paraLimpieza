@@ -1,4 +1,4 @@
-package org.example;
+package org.tpineda;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -6,36 +6,34 @@ import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-import java.util.Optional;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class UserManager {
+public class UsuarioGestor {
 
-    private Gson gson = new Gson();
-    private List<user> users = new ArrayList<>();
+    private final Gson gson = new Gson();
+    private List<usuario> users = new ArrayList<>();
 
-    public UserManager() {
+    public UsuarioGestor() {
         load();
     }
 
-    public void addUser(user u) {
+    public void addUser(usuario u) {
         if (u == null)
             return;
         users.add(u);
         save();
     }
 
-    public Optional<user> findUser(String username) {
+    public Optional<usuario> findUser(String username) {
         return users.stream()
-                .filter(u -> u.getUsername().equalsIgnoreCase(username))
+                .filter(u -> u.username().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        for (user u : users)
+        for (usuario u : users)
             System.out.println(u);
     }
 
@@ -49,7 +47,7 @@ public class UserManager {
 
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<usuario>>(){}.getType();
             users = gson.fromJson(reader, listType);
             if (users == null) users = new ArrayList<>();
         } catch (IOException e) {

@@ -1,15 +1,15 @@
-package org.example;
+package org.tpineda;
 
 import java.util.Scanner;
 
-public class Main {
+public class Constantes {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        UserManager manager = new UserManager();
+        UsuarioGestor manager = new UsuarioGestor();
         int Option = 0;
 
         do {
-            System.out.println("");
+            System.out.println();
             System.out.println("1. Añadir usuario");
             System.out.println("2. Buscar usuario");
             System.out.println("3. Listar usuarios");
@@ -20,14 +20,14 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Invalid input.");
             }
-            System.out.println("");
+            System.out.println();
             switch (Option) {
                 case 1:
                     System.out.print("Nombre del usuario: ");
                     String name = sc.nextLine();
                     System.out.print("Email: ");
                     String email = sc.nextLine();
-                    manager.addUser(new user(name, email));
+                    manager.addUser(new usuario(name, email));
                     break;
                 case 2:
                     System.out.print("Introduce el nombre de usuario: ");
