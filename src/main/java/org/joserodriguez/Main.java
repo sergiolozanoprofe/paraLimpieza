@@ -10,42 +10,49 @@ public class Main {
 
         do {
             System.out.println("");
-            System.out.println("1. Añadir usuario");
-            System.out.println("2. Buscar usuario");
-            System.out.println("3. Listar usuarios");
-            System.out.println("0. Salir");
-            System.out.print("Elegir: ");
+            System.out.println(constante.MENU_OPCION_1);
+            System.out.println(constante.MENU_OPCION_2);
+            System.out.println(constante.MENU_OPCION_3);
+            System.out.println(constante.MENU_OPCION_0);
+            System.out.print(constante.MENU_ELEGIR);
+
             try {
                 Option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Invalid input.");
+                System.out.println(constante.MENSAJE_INVALID_INPUT);
             }
+
             System.out.println("");
+
             switch (Option) {
                 case 1:
-                    System.out.print("Nombre del usuario: ");
+                    System.out.print(constante.PEDIR_NOMBRE);
                     String name = sc.nextLine();
-                    System.out.print("Email: ");
+                    System.out.print(constante.PEDIR_EMAIL);
                     String email = sc.nextLine();
-                    manager.addUser(new user(name, email));
+                    manager.addUser(new usuario(name, email));
                     break;
+
                 case 2:
-                    System.out.print("Introduce el nombre de usuario: ");
+                    System.out.print(constante.PEDIR_NOMBRE_BUSQUEDA);
                     String name2 = sc.nextLine();
                     manager.findUser(name2)
                             .ifPresentOrElse(
                                     System.out::println,
-                                    () -> System.out.println("Usuario no encontrado.")
+                                    () -> System.out.println(constante.MENSAJE_NO_ENCONTRADO)
                             );
+                    break;
 
                 case 3:
                     manager.listUsers();
                     break;
+
                 case 0:
-                    System.out.println("Bye!");
+                    System.out.println(constante.MENSAJE_BYE);
                     break;
+
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println(constante.MENSAJE_INVALID_OPTION);
             }
 
         } while (Option != 0);

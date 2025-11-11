@@ -13,47 +13,48 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class Gestordeusuario {
-
     private Gson gson = new Gson();
-    private List<user> users = new ArrayList<>();
+    private List<usuario> usuarios = new ArrayList<>();
 
     public Gestordeusuario() {
         load();
     }
 
-    public void addUser(user u) {
+    public void addUser(usuario u) {
         if (u == null)
             return;
-        users.add(u);
+        usuarios.add(u);
         save();
     }
 
-    public Optional<user> findUser(String username) {
-        return users.stream()
+    public Optional<usuario> findUser(String username) {
+        return usuarios.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        for (user u : users)
+        for (usuario u : usuarios)
             System.out.println(u);
     }
 
     private void save() {
-        try (FileWriter writer = new FileWriter("users.json")) {
-            gson.toJson(users, writer);
+        try (FileWriter writer = new FileWriter(constante.ARCHIVO_USUARIOS)) {
+            gson.toJson(usuarios, writer);
         } catch (IOException e) {
+            System.err.println(constante.ERROR_GUARDAR);
             e.printStackTrace();
         }
     }
 
     private void load() {
-        try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
-            users = gson.fromJson(reader, listType);
-            if (users == null) users = new ArrayList<>();
+        try (FileReader reader = new FileReader(constante.ARCHIVO_USUARIOS)) {
+            Type listType = new TypeToken<ArrayList<usuario>>(){}.getType();
+            usuarios = gson.fromJson(reader, listType);
+            if (usuarios == null) usuarios = new ArrayList<>();
         } catch (IOException e) {
-            users = new ArrayList<>();
+            System.err.println(constante.ERROR_CARGAR);
+            usuarios = new ArrayList<>();
         }
     }
 }
