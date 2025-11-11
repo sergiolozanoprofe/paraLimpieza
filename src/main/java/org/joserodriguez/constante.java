@@ -7,6 +7,7 @@ public class constante {
     public static final String COMPANY_NAME = "OpenAI";
     public static final String FORMATO_USUARIO = "User: %s (%s)";
     public static final String MENU_OPCION_1 = "1. Añadir usuario";
+    public static final String MENU_LINEA_VACIA = "";
     public static final String MENU_OPCION_2 = "2. Buscar usuario";
     public static final String MENU_OPCION_3 = "3. Listar usuarios";
     public static final String MENU_OPCION_0 = "0. Salir";

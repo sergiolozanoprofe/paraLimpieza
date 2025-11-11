@@ -9,7 +9,7 @@ public class Main {
         int Option = 0;
 
         do {
-            System.out.println("");
+            System.out.println(constante.MENU_LINEA_VACIA);
             System.out.println(constante.MENU_OPCION_1);
             System.out.println(constante.MENU_OPCION_2);
             System.out.println(constante.MENU_OPCION_3);
