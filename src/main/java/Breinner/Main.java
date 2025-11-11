@@ -1,4 +1,4 @@
-package org.example;
+package Breinner;
 
 import java.util.Scanner;
 
