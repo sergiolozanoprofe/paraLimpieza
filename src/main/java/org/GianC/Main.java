@@ -46,10 +46,17 @@ public class Main {
                     break;
                 default:
                     System.out.println("Invalid option.");
+
+                case 7:
+                    ejecutarLimpieza();
+                    break;
             }
 
         } while (Option != 0);
 
         sc.close();
+    }
+
+    private static void ejecutarLimpieza() {
     }
 }
