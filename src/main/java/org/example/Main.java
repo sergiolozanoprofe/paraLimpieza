@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        UserManager manager = new UserManager();
+        GestionUsuario manager = new GestionUsuario();
         int Option = 0;
 
         do {
@@ -27,7 +27,7 @@ public class Main {
                     String name = sc.nextLine();
                     System.out.print("Email: ");
                     String email = sc.nextLine();
-                    manager.addUser(new user(name, email));
+                    manager.addUser(new Usuario(name, email));
                     break;
                 case 2:
                     System.out.print("Introduce el nombre de usuario: ");

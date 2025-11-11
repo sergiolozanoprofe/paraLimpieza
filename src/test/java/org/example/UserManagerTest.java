@@ -7,8 +7,8 @@ public class UserManagerTest {
 
     @Test
     void testAddAndFindUser() {
-        UserManager manager = new UserManager();
-        user user = new user("juan", "juan@example.com");
+        GestionUsuario manager = new GestionUsuario();
+        Usuario user = new Usuario("juan", "juan@example.com");
         manager.addUser(user);
 
         assertTrue(manager.findUser("juan").isPresent());
