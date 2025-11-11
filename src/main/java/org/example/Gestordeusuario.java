@@ -12,36 +12,36 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class UserManager {
+public class Gestordeusuario {
 
     private Gson gson = new Gson();
-    private List<user> users = new ArrayList<>();
+    private List<Usuario> Usuarios = new ArrayList<>();
 
-    public UserManager() {
+    public Gestordeusuario() {
         load();
     }
 
-    public void addUser(user u) {
+    public void addUser(Usuario u) {
         if (u == null)
             return;
-        users.add(u);
+        Usuarios.add(u);
         save();
     }
 
-    public Optional<user> findUser(String username) {
-        return users.stream()
+    public Optional<Usuario> findUser(String username) {
+        return Usuarios.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        for (user u : users)
+        for (Usuario u : Usuarios)
             System.out.println(u);
     }
 
     private void save() {
         try (FileWriter writer = new FileWriter("users.json")) {
-            gson.toJson(users, writer);
+            gson.toJson(Usuarios, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,11 +49,11 @@ public class UserManager {
 
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
-            users = gson.fromJson(reader, listType);
-            if (users == null) users = new ArrayList<>();
+            Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();
+            Usuarios = gson.fromJson(reader, listType);
+            if (Usuarios == null) Usuarios = new ArrayList<>();
         } catch (IOException e) {
-            users = new ArrayList<>();
+            Usuarios = new ArrayList<>();
         }
     }
 }
