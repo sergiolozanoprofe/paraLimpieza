@@ -3,12 +3,12 @@ package org.breinner;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class UserManagerTest {
+public class PruebaAdministradorDeUsuarios {
 
     @Test
     void testAddAndFindUser() {
-        UserManager manager = new UserManager();
-        user user = new user("juan", "juan@breinner.com");
+        AdministradorDeUsuarios manager = new AdministradorDeUsuarios();
+        Usuario user = new Usuario("juan", "juan@breinner.com");
         manager.addUser(user);
 
         assertTrue(manager.findUser("juan").isPresent());
