@@ -11,7 +11,7 @@ public class Main {
 
         do {
             System.out.println("");
-            System.out.println(costantes.AÑADIR_USUARIO);
+            System.out.println(costantes.ANADIR_USUARIO);
             System.out.println(costantes.BUSCAR_USUARIO);
             System.out.println(costantes.LISTAR_USUARIOS);
             System.out.println(costantes.SALIR);
@@ -24,7 +24,7 @@ public class Main {
             System.out.println("");
             switch (opcion) {
                 case 1:
-                    añadirusuario(sc, gestor);
+                    anadirusuario(sc, gestor);
                     break;
                 case 2:
                     buscarusuario(sc, gestor);
@@ -55,7 +55,7 @@ public class Main {
                 );
     }
 
-    private static void añadirusuario(Scanner sc, Gestorusuario gestor) {
+    private static void anadirusuario(Scanner sc, Gestorusuario gestor) {
         System.out.print(costantes.NOMBRE_DEL_USUARIO);
         String name = sc.nextLine();
         System.out.print(costantes.EMAIL);
