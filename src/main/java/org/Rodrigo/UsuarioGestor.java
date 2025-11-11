@@ -1,4 +1,4 @@
-package org.example;
+package org.Rodrigo;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -12,36 +12,36 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class UserManager {
+public class UsuarioGestor {
 
     private Gson gson = new Gson();
-    private List<user> users = new ArrayList<>();
+    private List<usuario> usuarios = new ArrayList<>();
 
-    public UserManager() {
+    public UsuarioGestor() {
         load();
     }
 
-    public void addUser(user u) {
+    public void addUser(usuario u) {
         if (u == null)
             return;
-        users.add(u);
+        usuarios.add(u);
         save();
     }
 
-    public Optional<user> findUser(String username) {
-        return users.stream()
+    public Optional<usuario> findUser(String username) {
+        return usuarios.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        for (user u : users)
+        for (usuario u : usuarios)
             System.out.println(u);
     }
 
     private void save() {
         try (FileWriter writer = new FileWriter("users.json")) {
-            gson.toJson(users, writer);
+            gson.toJson(usuarios, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,11 +49,11 @@ public class UserManager {
 
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
-            users = gson.fromJson(reader, listType);
-            if (users == null) users = new ArrayList<>();
+            Type listType = new TypeToken<ArrayList<usuario>>(){}.getType();
+            usuarios = gson.fromJson(reader, listType);
+            if (usuarios == null) usuarios = new ArrayList<>();
         } catch (IOException e) {
-            users = new ArrayList<>();
+            usuarios = new ArrayList<>();
         }
     }
 }
