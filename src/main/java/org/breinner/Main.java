@@ -1,63 +1,65 @@
 package org.breinner;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Main {
-
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AdministradorDeUsuarios manager = new AdministradorDeUsuarios();
-        int Option = 0;
+        int option = 0;
 
         do {
-            System.out.println("");
-            System.out.println(Constantes.T1);
-            System.out.println(Constantes.T2);
-            System.out.println(Constantes.T3);
-            System.out.println(Constantes.SALIR);
-            System.out.print(Constantes.ELEGIR);
+            LOGGER.info("");
+            LOGGER.info(Constantes.T1);
+            LOGGER.info(Constantes.T2);
+            LOGGER.info(Constantes.T3);
+            LOGGER.info(Constantes.SALIR);
+            LOGGER.info(Constantes.ELEGIR);
             try {
-                Option = Integer.parseInt(sc.nextLine());
+                option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println(Constantes.INVALID_INPUT);
+                LOGGER.severe(Constantes.INVALID_INPUT);
             }
-            System.out.println("");
-            switch (Option) {
+            LOGGER.info("");
+            switch (option) {
                 case 1:
                     extracted(sc, manager);
                     break;
                 case 2:
                     extracted1(sc, manager);
-
+                    break;
                 case 3:
                     manager.listUsers();
                     break;
                 case 0:
-                    System.out.println("Bye!");
+                    LOGGER.info("Bye!");
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    LOGGER.severe("Invalid option.");
             }
 
-        } while (Option != 0);
+        } while (option != 0);
 
         sc.close();
     }
 
+
     private static void extracted1(Scanner sc, AdministradorDeUsuarios manager) {
-        System.out.print("Introduce el nombre de usuario: ");
+        LOGGER.info("Introduce el nombre de usuario: ");
         String name2 = sc.nextLine();
         manager.findUser(name2)
                 .ifPresentOrElse(
-                        System.out::println,
-                        () -> System.out.println("Usuario no encontrado.")
-                );
+                        u -> LOGGER.info ("Usuario encontrado."),
+                        () -> LOGGER.severe("Usuario no encontrado")
+       );
     }
 
     private static void extracted(Scanner sc, AdministradorDeUsuarios manager) {
-        System.out.print("Nombre del usuario: ");
+        LOGGER.info("Nombre del usuario: ");
         String name = sc.nextLine();
-        System.out.print("Email: ");
+        LOGGER.info("Email: ");
         String email = sc.nextLine();
         manager.addUser(new Usuario(name, email));
     }
