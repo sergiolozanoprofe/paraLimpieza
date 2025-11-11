@@ -3,6 +3,7 @@ package org.ejemplo;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         gestorusuario manager = new gestorusuario();
@@ -10,42 +11,42 @@ public class Main {
 
         do {
             System.out.println("");
-            System.out.println("1. Añadir usuario");
-            System.out.println("2. Buscar usuario");
-            System.out.println("3. Listar usuarios");
-            System.out.println("0. Salir");
-            System.out.print("Elegir: ");
+            System.out.println(constantes.AÑADIR_USUARIO);
+            System.out.println(constantes.BUSCAR_USUARIO);
+            System.out.println(constantes.LISTAR_USUARIOS);
+            System.out.println(constantes.SALIR);
+            System.out.print(constantes.ELEGIR);
             try {
                 Option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Invalid input.");
+                System.out.println(constantes.INVALID_INPUT);
             }
             System.out.println("");
             switch (Option) {
                 case 1:
-                    System.out.print("Nombre del usuario: ");
+                    System.out.print(constantes.NOMBRE_DEL_USUARIO);
                     String name = sc.nextLine();
-                    System.out.print("Email: ");
+                    System.out.print(constantes.EMAIL);
                     String email = sc.nextLine();
                     manager.addUser(new usuario(name, email));
                     break;
                 case 2:
-                    System.out.print("Introduce el nombre de usuario: ");
+                    System.out.print(constantes.INTRODUCE_EL_NOMBRE_DE_USUARIO);
                     String name2 = sc.nextLine();
                     manager.findUser(name2)
                             .ifPresentOrElse(
                                     System.out::println,
-                                    () -> System.out.println("Usuario no encontrado.")
+                                    () -> System.out.println(constantes.USUARIO_NO_ENCONTRADO)
                             );
 
                 case 3:
                     manager.listUsers();
                     break;
                 case 0:
-                    System.out.println("Bye!");
+                    System.out.println(constantes.BYE);
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println(constantes.INVALID_OPTION);
             }
 
         } while (Option != 0);
