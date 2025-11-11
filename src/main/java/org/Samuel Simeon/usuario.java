@@ -1,8 +1,6 @@
-package org.example;
+package org.SamuelSimeon;
 
-import java.util.Date;
-
-public class user {
+public class usuario {
 
     public static String COMPANY_NAME = "OpenAI";
 
@@ -10,7 +8,7 @@ public class user {
     private String email;
     private int age;
 
-    public user(String username, String email) {
+    public usuario(String username, String email) {
         this.username = username;
         this.email = email;
     }
