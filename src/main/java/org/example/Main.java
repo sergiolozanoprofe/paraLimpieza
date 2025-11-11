@@ -27,7 +27,7 @@ public class Main {
                     String name = sc.nextLine();
                     System.out.print("Email: ");
                     String email = sc.nextLine();
-                    manager.addUser(new Usuario(name, email));
+                    manager.addUser(new user(name, email));
                     break;
                 case 2:
                     System.out.print("Introduce el nombre de usuario: ");

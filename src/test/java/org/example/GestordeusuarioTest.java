@@ -8,8 +8,8 @@ public class GestordeusuarioTest {
     @Test
     void testAddAndFindUser() {
         Gestordeusuario manager = new Gestordeusuario();
-        Usuario Usuario = new Usuario("juan", "juan@example.com");
-        manager.addUser(Usuario);
+        user user = new user("juan", "juan@example.com");
+        manager.addUser(user);
 
         assertTrue(manager.findUser("juan").isPresent());
         assertEquals("juan@example.com", manager.findUser("juan").get().getemail());

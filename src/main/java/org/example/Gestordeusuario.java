@@ -15,33 +15,33 @@ import java.util.*;
 public class Gestordeusuario {
 
     private Gson gson = new Gson();
-    private List<Usuario> Usuarios = new ArrayList<>();
+    private List<user> users = new ArrayList<>();
 
     public Gestordeusuario() {
         load();
     }
 
-    public void addUser(Usuario u) {
+    public void addUser(user u) {
         if (u == null)
             return;
-        Usuarios.add(u);
+        users.add(u);
         save();
     }
 
-    public Optional<Usuario> findUser(String username) {
-        return Usuarios.stream()
+    public Optional<user> findUser(String username) {
+        return users.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        for (Usuario u : Usuarios)
+        for (user u : users)
             System.out.println(u);
     }
 
     private void save() {
         try (FileWriter writer = new FileWriter("users.json")) {
-            gson.toJson(Usuarios, writer);
+            gson.toJson(users, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,11 +49,11 @@ public class Gestordeusuario {
 
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();
-            Usuarios = gson.fromJson(reader, listType);
-            if (Usuarios == null) Usuarios = new ArrayList<>();
+            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
+            users = gson.fromJson(reader, listType);
+            if (users == null) users = new ArrayList<>();
         } catch (IOException e) {
-            Usuarios = new ArrayList<>();
+            users = new ArrayList<>();
         }
     }
 }
