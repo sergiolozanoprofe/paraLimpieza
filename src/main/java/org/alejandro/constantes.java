@@ -1,4 +1,4 @@
-package org.Alejandro;
+package org.alejandro;
 
 public class constantes {
     public static final String AÑADIR_USUARIO = "1. Añadir usuario";

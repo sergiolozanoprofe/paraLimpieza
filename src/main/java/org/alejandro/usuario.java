@@ -1,4 +1,4 @@
-package org.Alejandro;
+package org.alejandro;
 
 public class usuario {
 

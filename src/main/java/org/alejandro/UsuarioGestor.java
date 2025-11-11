@@ -1,4 +1,4 @@
-package org.Alejandro;
+package org.alejandro;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
