@@ -3,6 +3,7 @@ package org.breinner;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AdministradorDeUsuarios manager = new AdministradorDeUsuarios();
@@ -10,15 +11,15 @@ public class Main {
 
         do {
             System.out.println("");
-            System.out.println("1. Añadir usuario");
-            System.out.println("2. Buscar usuario");
-            System.out.println("3. Listar usuarios");
-            System.out.println("0. Salir");
-            System.out.print("Elegir: ");
+            System.out.println(Constantes.T1);
+            System.out.println(Constantes.T2);
+            System.out.println(Constantes.T3);
+            System.out.println(Constantes.SALIR);
+            System.out.print(Constantes.ELEGIR);
             try {
                 Option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Invalid input.");
+                System.out.println(Constantes.INVALID_INPUT);
             }
             System.out.println("");
             switch (Option) {
