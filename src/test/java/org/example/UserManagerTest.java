@@ -1,5 +1,7 @@
 package org.example;
 
+import org.DEYVIDGAMBOAOGEDA.USUARIOGERENTE;
+import org.DEYVIDGAMBOAOGEDA.USUARIO;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,8 +9,8 @@ public class UserManagerTest {
 
     @Test
     void testAddAndFindUser() {
-        UserManager manager = new UserManager();
-        user user = new user("juan", "juan@example.com");
+        USUARIOGERENTE manager = new USUARIOGERENTE();
+        USUARIO user = new USUARIO("juan", "juan@example.com");
         manager.addUser(user);
 
         assertTrue(manager.findUser("juan").isPresent());
