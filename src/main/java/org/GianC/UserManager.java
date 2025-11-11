@@ -43,7 +43,7 @@ public class UserManager {
         try (FileWriter writer = new FileWriter("users.json")) {
             gson.toJson(users, writer);
         } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
 
