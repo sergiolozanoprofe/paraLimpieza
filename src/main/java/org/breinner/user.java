@@ -1,8 +1,6 @@
-package Breinner;
+package org.breinner;
 
-import java.util.Date;
-
-public class user {
+public class    user {
 
     public static String COMPANY_NAME = "OpenAI";
 
