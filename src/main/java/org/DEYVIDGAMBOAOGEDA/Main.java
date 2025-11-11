@@ -31,14 +31,8 @@ public class Main {
                     gerente.addUser(new USUARIO(name, email));
                     break;
                 case 2:
-                    System.out.print(Constante.INTRODUCE_EL_NOMBRE_DE_USUARIO + " ");
-                    String name2 = sc.nextLine();
-                    gerente.findUser(name2)
-                            .ifPresentOrElse(
-                                    System.out::println,
-                                    () -> System.out.println(Constante.USUARIO_NO_ENCONTRADO)
-                            );
-
+                    extraer(sc, gerente);
+                    break;
                 case 3:
                     gerente.listUsers();
                     break;
@@ -52,5 +46,15 @@ public class Main {
         } while (Opcion != 0);
 
         sc.close();
+    }
+
+    private static void extraer(Scanner sc, USUARIOGERENTE gerente) {
+        System.out.print(Constante.INTRODUCE_EL_NOMBRE_DE_USUARIO + " ");
+        String name2 = sc.nextLine();
+        gerente.findUser(name2)
+                .ifPresentOrElse(
+                        System.out::println,
+                        () -> System.out.println(Constante.USUARIO_NO_ENCONTRADO)
+                );
     }
 }
