@@ -23,7 +23,7 @@ public class usuario {
 
     @Override
     public String toString() {
-
+        // Se usa la constante para definir el formato
         return String.format(constante.FORMATO_USUARIO, username, email);
     }
 }
