@@ -1,16 +1,14 @@
 package org.example;
 
-import java.util.Date;
+public class Usuario {
 
-public class user {
-
-    public static String COMPANY_NAME = "OpenAI";
+    public static String COMPANY_NAME = Constantes.NOMBRE_EMPRESA;
 
     private String username;
     private String email;
     private int age;
 
-    public user(String username, String email) {
+    public Usuario(String username, String email) {
         this.username = username;
         this.email = email;
     }
@@ -24,6 +22,6 @@ public class user {
     }
 
     public String toString(){
-        return "User: " + username + " (" + email + ")";
+        return String.format(Constantes.FORMATO_USUARIO, username, email);
     }
 }
