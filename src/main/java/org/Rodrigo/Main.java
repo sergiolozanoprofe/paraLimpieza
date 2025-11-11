@@ -3,6 +3,7 @@ package org.Rodrigo;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         UsuarioGestor gestor = new UsuarioGestor();
@@ -10,46 +11,54 @@ public class Main {
 
         do {
             System.out.println("");
-            System.out.println("1. Añadir usuario");
-            System.out.println("2. Buscar usuario");
-            System.out.println("3. Listar usuarios");
-            System.out.println("0. Salir");
-            System.out.print("Elegir: ");
+            System.out.println(Constante.AÑADIR_USUARIO);
+            System.out.println(Constante.BUSCAR_USUARIO);
+            System.out.println(Constante.LISTAR_USUARIOS);
+            System.out.println(Constante.SALIR);
+            System.out.print(Constante.ELEGIR);
             try {
                 Opcion = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Invalid input.");
+                System.out.println(Constante.INVALID_INPUT);
             }
             System.out.println("");
             switch (Opcion) {
                 case 1:
-                    System.out.print("Nombre del usuario: ");
-                    String name = sc.nextLine();
-                    System.out.print("Email: ");
-                    String email = sc.nextLine();
-                    gestor.addUser(new usuario(name, email));
+                    extracted(sc, gestor);
                     break;
                 case 2:
-                    System.out.print("Introduce el nombre de usuario: ");
-                    String name2 = sc.nextLine();
-                    gestor.findUser(name2)
-                            .ifPresentOrElse(
-                                    System.out::println,
-                                    () -> System.out.println("Usuario no encontrado.")
-                            );
-
+                    extracted1(sc, gestor);
+                    break;
                 case 3:
                     gestor.listUsers();
                     break;
                 case 0:
-                    System.out.println("Bye!");
+                    System.out.println(Constante.BYE);
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println(Constante.INVALID_OPTION);
             }
 
         } while (Opcion != 0);
 
         sc.close();
+    }
+
+    private static void extracted1(Scanner sc, UsuarioGestor gestor) {
+        System.out.print(Constante.INTRODUCE_EL_NOMBRE_DE_USUARIO);
+        String name2 = sc.nextLine();
+        gestor.findUser(name2)
+                .ifPresentOrElse(
+                        System.out::println,
+                        () -> System.out.println(Constante.USUARIO_NO_ENCONTRADO)
+                );
+    }
+
+    private static void extracted(Scanner sc, UsuarioGestor gestor) {
+        System.out.print(Constante.NOMBRE_DEL_USUARIO);
+        String name = sc.nextLine();
+        System.out.print(Constante.EMAIL);
+        String email = sc.nextLine();
+        gestor.addUser(new usuario(name, email));
     }
 }
