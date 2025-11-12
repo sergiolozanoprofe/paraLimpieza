@@ -1,4 +1,4 @@
-# Proyecto para código limpio
+# Proyecto para código limpieza practica 6
 
 <!-- Pon tu nombre aquí debajo -->
 
