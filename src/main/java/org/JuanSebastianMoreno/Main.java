@@ -2,6 +2,18 @@ package org.JuanSebastianMoreno;
 
 import java.util.Scanner;
 
+/**
+ * @autorJuanSebastianMoreno
+ * añadir un usuario
+ * buscar un usuario
+ * listar un usuario
+ * salir
+ * elegir la opcion que quieres
+ * cada opcion abre un case con mas opciones
+ * nombre del usuario
+ * busca un usuario y te lo enseña su email si lo encuentra
+ */
+
 public class Main {
 
     public static void main(String[] args) {

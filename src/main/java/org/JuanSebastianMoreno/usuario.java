@@ -1,5 +1,9 @@
 package org.JuanSebastianMoreno;
-
+/**
+ * @autorJuanSebastianMoreno
+ * pide un usuario
+ *pide un email
+ */
 public class usuario {
 
     public static String COMPANY_NAME = "OpenAI";

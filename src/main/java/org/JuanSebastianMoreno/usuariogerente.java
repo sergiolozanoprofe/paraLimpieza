@@ -1,4 +1,7 @@
 package org.JuanSebastianMoreno;
+/**
+ * busca el usuario pedido por otro usuario
+ */
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
