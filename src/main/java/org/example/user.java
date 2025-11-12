@@ -1,9 +1,12 @@
 package org.example;
 
 import java.util.Date;
-
+/**
+ *
+ * esta clase es para guardar los datos de un usuario, aqui se guarda su nombre, email y su edad
+ *
+ */
 public class user {
-
     public static String COMPANY_NAME = "OpenAI";
 
     private String username;

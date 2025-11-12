@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ *
+ * esta clase sirve para añadir un usuario, guardarlo y listarlo
+ *
+ */
 public class UserManager {
 
     private Gson gson = new Gson();
