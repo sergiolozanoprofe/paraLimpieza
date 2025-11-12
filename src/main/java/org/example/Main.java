@@ -1,7 +1,9 @@
 package org.example;
-
 import java.util.Scanner;
-
+/**
+  * este programa es para ingresar, buscar y ver una lista de usuarios
+ * @author Cristopher Orellana
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
