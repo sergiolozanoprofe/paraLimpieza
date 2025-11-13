@@ -3,7 +3,8 @@ package org.joserodriguez;
 public class usuario {
 
     public static String COMPANY_NAME = constante.COMPANY_NAME;
-
+/** define una clase usuario que representa a un usuario con nombre y correo, y devuelve su información formateada*/
+/** @author JoseRodriguez */
     private String username;
     private String email;
     private int age;

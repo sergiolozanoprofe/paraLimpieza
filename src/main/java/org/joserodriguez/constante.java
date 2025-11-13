@@ -1,6 +1,7 @@
 package org.joserodriguez;
 public class constante {
-
+/** Define una clase con constantes de texto usadas para manejar mensajes, menús y errores en un programa de gestión de usuarios.*/
+/** @author JoseRodriguez */
     public static final String ARCHIVO_USUARIOS = "users.json";
     public static final String ERROR_GUARDAR = "Error al guardar usuarios";
     public static final String ERROR_CARGAR = "Error al cargar usuarios";

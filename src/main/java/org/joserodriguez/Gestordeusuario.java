@@ -13,6 +13,8 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class Gestordeusuario {
+ /** verifica automaticamente que cuando se añade un usuario al gestor luego se puede encontrar correctamente y su correo elecronico es el correcto*/
+ /** @author JoseRodriguez */
     private Gson gson = new Gson();
     private List<usuario> usuarios = new ArrayList<>();
 

@@ -7,7 +7,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Gestordeusuario manager = new Gestordeusuario();
         int Option = 0;
-
+/**lee la opción del usuario y ejecuta la acción correspondiente hasta que elige salir
+         @author JoseRodriguez */
         do {
             System.out.println(constante.MENU_LINEA_VACIA);
             System.out.println(constante.MENU_OPCION_1);
