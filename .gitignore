@@ -1,8 +1,9 @@
-target/
+target/*
+!/target/apidocs/
+!/target/apidocs/**
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.kotlin
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
