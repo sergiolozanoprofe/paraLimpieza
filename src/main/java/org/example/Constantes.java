@@ -1,6 +1,8 @@
 package org.example;
-/** Comentario: centralizar todos los textos fijos usados en el programa**/
-/** @author:Marco**/
+/**
+ * Comentario: centralizar todos los textos fijos usados en el programa.
+ * @author Marco
+ */
 public class Constantes {
     public static final String ARCHIVO_USUARIOS = "users.json";
     public static final String ERROR_LECTURA = "Error al leer el archivo de usuarios.";

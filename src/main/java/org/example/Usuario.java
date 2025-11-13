@@ -1,6 +1,6 @@
 package org.example;
 /** Comentario: define una clase usuario que representa un correo y un nombre y devuelve la informacion formateada**/
-/** @author:Marco**/
+/** @author Marco**/
 public class Usuario {
 
     public static String COMPANY_NAME = Constantes.NOMBRE_EMPRESA;
