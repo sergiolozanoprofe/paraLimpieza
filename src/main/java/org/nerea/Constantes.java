@@ -1,6 +1,13 @@
 package org.nerea;
 
+/**
+ * esta es la clase constantes, aqui metemos aquello que no cambia en el programa
+ */
 public class Constantes {
+    /**
+     * aqui tenemeno lo que es un string en el main, para el menu,
+     * para mensajes de usuario y la opcion salir de menu
+     */
     //menú
     public static final String OPCION_1 = "1. Añadir usuario";
     public static final String OPCION_2 = "2. Buscar usuario";
