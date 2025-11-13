@@ -1,7 +1,8 @@
 package org.Alejandra;
 
 import java.util.Scanner;
-
+/** Este código lee la opción escogida por el usuario y ejecuta la acción correspondiente hasta que elige salir.*/
+/** @author:Alejandra*/
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

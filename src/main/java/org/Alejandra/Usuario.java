@@ -1,6 +1,8 @@
 package org.Alejandra;
 
 import java.util.Date;
+/** Define una clase que representa un correo y un nombre y devuelve su informacion formateada.*/
+/** @author:Alejandra*/
 
 public class Usuario {
 

@@ -1,5 +1,6 @@
 package org.Alejandra;
-
+/** su función es guardar textos fijos (constantes) que se usan en otras partes del programa */
+/** @author:Alejandra*/
 public class Constantes {
     // 🔹 Main
     public static final String MENU_LINEA_VACIA = "";
