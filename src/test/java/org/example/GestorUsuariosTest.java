@@ -3,13 +3,13 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class UserManagerTest {
+public class GestorUsuariosTest {
 
     @Test
     void testAddAndFindUser() {
-        UserManager manager = new UserManager();
-        user user = new user("juan", "juan@example.com");
-        manager.addUser(user);
+        GestorUsuarios manager = new GestorUsuarios();
+        Usuario Usuario = new Usuario("juan", "juan@example.com");
+        manager.addUser(Usuario);
 
         assertTrue(manager.findUser("juan").isPresent());
         assertEquals("juan@example.com", manager.findUser("juan").get().getemail());
