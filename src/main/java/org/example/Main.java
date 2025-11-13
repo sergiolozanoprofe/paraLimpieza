@@ -1,5 +1,6 @@
 package org.example;
-
+/** Comentario: Esto lee la opcion del usuario y ejecuta una accion**/
+/** @author:Marco**/
 import java.util.Scanner;
 
 public class Main {

@@ -1,5 +1,6 @@
 package org.example;
-
+/** Comentario: verifica automaticamente cuando se añade un usuario al gestor lugo se pueda encontrar correctamente y el correo sea correcto**/
+/** @author:Marco**/
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
