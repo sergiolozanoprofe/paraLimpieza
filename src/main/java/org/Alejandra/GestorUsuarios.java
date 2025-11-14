@@ -1,4 +1,4 @@
-package org.example;
+package org.Alejandra;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -12,30 +12,30 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class UserManager {
+public class GestorUsuarios {
 
     private Gson gson = new Gson();
-    private List<user> users = new ArrayList<>();
+    private List<Usuario> users = new ArrayList<>();
 
-    public UserManager() {
+    public GestorUsuarios() {
         load();
     }
 
-    public void addUser(user u) {
+    public void addUser(Usuario u) {
         if (u == null)
             return;
         users.add(u);
         save();
     }
 
-    public Optional<user> findUser(String username) {
+    public Optional<Usuario> findUser(String username) {
         return users.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
     public void listUsers() {
-        for (user u : users)
+        for (Usuario u : users)
             System.out.println(u);
     }
 
@@ -43,16 +43,18 @@ public class UserManager {
         try (FileWriter writer = new FileWriter("users.json")) {
             gson.toJson(users, writer);
         } catch (IOException e) {
+            System.out.println(Constantes.ERROR_GUARDAR);
             e.printStackTrace();
         }
     }
 
     private void load() {
-        try (FileReader reader = new FileReader("users.json")) {
-            Type listType = new TypeToken<ArrayList<user>>(){}.getType();
+        try (FileReader reader = new FileReader(Constantes.ARCHIVO_USUARIOS)) {
+            Type listType = new TypeToken<ArrayList<Usuario>>() {}.getType();
             users = gson.fromJson(reader, listType);
             if (users == null) users = new ArrayList<>();
         } catch (IOException e) {
+            System.out.println(Constantes.ERROR_CARGAR);
             users = new ArrayList<>();
         }
     }
