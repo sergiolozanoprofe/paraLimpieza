@@ -1,0 +1,43 @@
+@options
+@packages
+-classpath
+'C:/Users/Santos/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/Users/Santos/Desktop/IESQ(local)/ENTORNOS/paraDocumentacion/src/main/java;C:/Users/Santos/Desktop/IESQ(local)/ENTORNOS/paraDocumentacion/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Santos/Desktop/IESQ(local)/ENTORNOS/paraDocumentacion/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'paraLimpieza 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'paraLimpieza 1.0-SNAPSHOT API'
+org.example
+C:\Users\Santos\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar = 1762347234019
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\src\main\java = 1763066014409
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\generated-sources\annotations = 1763113875819
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\allclasses-index.html = 1763113896554
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\allpackages-index.html = 1763113896557
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\element-list = 1763113896472
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\help-doc.html = 1763113896600
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\index-all.html = 1763113896581
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\index.html = 1763113896594
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\member-search-index.js = 1763113896565
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\module-search-index.js = 1763113896559
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\overview-tree.html = 1763113896539
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\package-search-index.js = 1763113896562
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\search.html = 1763113896590
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\tag-search-index.js = 1763113896567
+C:\Users\Santos\Desktop\IESQ(local)\ENTORNOS\paraDocumentacion\target\apidocs\type-search-index.js = 1763113896563
