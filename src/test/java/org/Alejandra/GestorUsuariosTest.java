@@ -2,7 +2,7 @@ package org.Alejandra;
 
 import org.junit.jupiter.api.Test;
 /** Este código verifica automaticamente que: cuando se añade un usuario al gestor, luego se puede encontrar correctamente, y su correo es el correcto.*/
-/** @author:Alejandra*/
+/** @author Alejandra*/
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
