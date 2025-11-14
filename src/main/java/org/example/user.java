@@ -2,6 +2,10 @@ package org.example;
 
 import java.util.Date;
 
+/**
+ * Aqui se define la clase User que utiliza nombre, email y edad
+ * @author Alvaro Santos
+ */
 public class user {
 
     public static String COMPANY_NAME = "OpenAI";

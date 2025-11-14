@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * Clase que gestiona usuarios. los añade, busca, lista,
+ * y lo carga desde un JSON
+ */
 public class UserManager {
 
     private Gson gson = new Gson();
