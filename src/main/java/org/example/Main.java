@@ -2,12 +2,21 @@ package org.example;
 
 import java.util.Scanner;
 
+/*
+* Esta clase es la que interactua directamente con el usuario que usa nuestra aplicación y que 'consulta' otras clases
+* para obtener/enviar la información al usuario.
+* */
+
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         UserManager manager = new UserManager();
         int Option = 0;
 
+
+        /*Esto es un menú con distintas opciones para que el usuario pueda elegir una. Dependiendo de la que elige, se comunica con el UserManager
+        * que a su vez se comunica con user para registrar u obtener los usuarios y direcciones mail.*/
         do {
             System.out.println("");
             System.out.println("1. Añadir usuario");
@@ -37,6 +46,7 @@ public class Main {
                                     System.out::println,
                                     () -> System.out.println("Usuario no encontrado.")
                             );
+                    break;
 
                 case 3:
                     manager.listUsers();
