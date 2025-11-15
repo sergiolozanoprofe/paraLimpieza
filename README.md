@@ -1,6 +1,3 @@
-# Proyecto para código limpio
+# Proyecto para Documentación
 
-<!-- Pon tu nombre aquí debajo -->
-
-
-
+Miguel Alejandro Rincones Salinas<!-- Pon tu nombre aquí debajo -->
