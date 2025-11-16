@@ -12,6 +12,12 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ Es la clase intermedia entre el main y la de user. Se encarga de ejecutar las acciones segun lo que haya elegido el usario en la clase main.
+ conectandose con la clase user para poder operar.
+ * @author [Miguel Rincones] */
+
+
 public class UserManager {
 
     private Gson gson = new Gson();
@@ -21,6 +27,10 @@ public class UserManager {
         load();
     }
 
+    /**
+     Ejecuta parte de la funcion de anadir usuario, en caso de que no introduzca un valor, devuelve un aviso de que esta vacio. y sino lo almacena.
+     * */
+
     public void addUser(user u) {
         if (u == null)
             return;
@@ -28,16 +38,28 @@ public class UserManager {
         save();
     }
 
+    /**
+     * ejecuta la funcion de buscar usuarios.
+     * */
+
     public Optional<user> findUser(String username) {
         return users.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
+    /**
+     * ejecuta la funcion de listar usuarios
+     * */
+
     public void listUsers() {
         for (user u : users)
             System.out.println(u);
     }
+
+    /**
+     * Ejecuta la funcion de guardar
+     * */
 
     private void save() {
         try (FileWriter writer = new FileWriter("users.json")) {
@@ -46,6 +68,11 @@ public class UserManager {
             e.printStackTrace();
         }
     }
+
+    /**
+     * No se de que va esto.
+     * */
+
 
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
