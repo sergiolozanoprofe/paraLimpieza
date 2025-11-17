@@ -3,7 +3,9 @@ package org.example;
 import java.util.Date;
 
 public class user {
-
+    /**
+     * Esta clase sirve para añadir una usario y poner su nombre
+     */
     public static String COMPANY_NAME = "OpenAI";
 
     private String username;

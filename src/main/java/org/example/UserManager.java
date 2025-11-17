@@ -13,7 +13,9 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class UserManager {
-
+    /**
+     * / esta sirve para ver la lista de usuarios y gmail
+     */
     private Gson gson = new Gson();
     private List<user> users = new ArrayList<>();
 

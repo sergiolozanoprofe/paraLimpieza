@@ -7,7 +7,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         UserManager manager = new UserManager();
         int Option = 0;
-
+/**
+ * @author Deyvid Gamboa
+ * Este clase sirve para añadir buscar y ver una lista de ususario
+ */
         do {
             System.out.println("");
             System.out.println("1. Añadir usuario");
