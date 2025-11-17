@@ -1,5 +1,5 @@
 package org.example;
-
+//Commit inicial
 import java.util.Scanner;
 
 public class Main {
