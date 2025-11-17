@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * Clase que gestiona una lista de usuarios
+ * @author [LucasMartinezRodriguez]
+ */
 public class GestionUsuario {
 
     private Gson gson = new Gson();
@@ -21,6 +25,9 @@ public class GestionUsuario {
         load();
     }
 
+    /**
+     * Añade usuario a la lista
+     */
     public void addUser(Usuario u) {
         if (u == null)
             return;
@@ -28,17 +35,25 @@ public class GestionUsuario {
         save();
     }
 
+    /**
+     * Busca usuario por nombre
+     */
     public Optional<Usuario> findUser(String username) {
         return users.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
+    /**
+     * Muestra la lista de usuarios usuarios
+     */
     public void listUsers() {
         for (Usuario u : users)
             System.out.println(u);
     }
-
+    /**
+     *Guarda la lista de usuarios
+     */
     private void save() {
         try (FileWriter writer = new FileWriter("users.json")) {
             gson.toJson(users, writer);
@@ -46,7 +61,9 @@ public class GestionUsuario {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Carga la lista de usuarios
+     */
     private void load() {
         try (FileReader reader = new FileReader("users.json")) {
             Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();
