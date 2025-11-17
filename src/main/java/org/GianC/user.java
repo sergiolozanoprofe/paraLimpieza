@@ -1,7 +1,10 @@
 package org.GianC;
 
 import java.util.Date;
-
+/**
+ * Autor: Gianfranco Castelli
+ * Esta clase se encarga de pedir nombre de usuario y email
+ */
 public class user {
 
     public static String COMPANY_NAME = "OpenAI";

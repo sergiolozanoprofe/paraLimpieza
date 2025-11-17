@@ -1,7 +1,10 @@
 package org.GianC;
 
 import org.junit.jupiter.api.Test;
-
+/**
+ * Autor: Gianfranco Castelli
+ * Esta clase se encarga de asignar un administrador de usuarios
+ */
 public class UserManagerTest {
 
     @Test

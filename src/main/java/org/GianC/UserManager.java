@@ -11,7 +11,10 @@ import java.util.Optional;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
-
+/**
+ * Autor: Gianfranco Castelli
+ * Esta clase se encarga de leer archivos de determinado usuario
+ */
 public class UserManager {
 
     private Gson gson = new Gson();

@@ -1,7 +1,10 @@
 package org.GianC;
 
 import java.util.Scanner;
-
+/**
+ * Autor: Gianfranco Castelli
+ * Esta clase se encarga de gestionar usuarios
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
