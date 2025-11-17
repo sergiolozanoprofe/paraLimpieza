@@ -6,17 +6,18 @@ public class Usuario {
 
     private String username;
     private String email;
+    /** la edad*/
     private int age;
 
     public Usuario(String username, String email) {
         this.username = username;
         this.email = email;
     }
-
+/** comprueba el usuario*/
     public String getUsername(){
         return username;
     }
-
+/** compruba el email*/
     public String getemail() {
         return email;
     }

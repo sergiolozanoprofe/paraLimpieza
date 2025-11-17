@@ -3,13 +3,13 @@ package org.Jorge;
 kage org.example;
 
 import java.util.Scanner;
-
+/** nombre de la persona */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         GestorUsuarios gestor = new GestorUsuarios();
         int Option = 0;
-
+/** el do es un bucle*/
         do {
             System.out.println();
             System.out.println(Constantes.Anadir);
@@ -23,6 +23,7 @@ public class Main {
                 System.out.println("Invalid input.");
             }
             System.out.println();
+            /** esto es otro bucle pero de switchcase*/
             switch (Option) {
                 case 1:
                     procesarOpcion1(sc, gestor);
