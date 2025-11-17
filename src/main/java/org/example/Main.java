@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * clase principal permite añadir, buscar y listar
- *@autor [Sophia Forero]
+ *@author [Sophia Forero]
  */
 public class Main {
     public static void main(String[] args) {

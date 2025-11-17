@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * clase q contiene informacion del usuario
- * @autor [Sophia Forero]
+ * @author [Sophia Forero]
  */
 public class user {
     /**

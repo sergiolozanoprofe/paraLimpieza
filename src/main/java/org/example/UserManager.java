@@ -14,7 +14,7 @@ import java.util.*;
 
 /**
  * clase que gestiona una lista de usuarios
- * @autor [Sophia Forero]
+ * @author [Sophia Forero]
  */
 public class UserManager {
 
