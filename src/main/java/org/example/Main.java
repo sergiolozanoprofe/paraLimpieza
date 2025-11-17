@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Clase principal del programa. Gestiona el menú interactivo y permite
  * añadir, buscar y enlistar usuarios utilizando.
- * @autor [Alejandro Herrero]
+ * @author [Alejandro Herrero]
  */
 public class Main {
     public static void main(String[] args) {

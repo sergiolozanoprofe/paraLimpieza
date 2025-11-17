@@ -4,7 +4,7 @@ import java.util.Date;
 /**
  * Clase que representa un usuario de la aplicación.
  * Contiene información básica como nombre de usuario, email y edad.
- * @author Alejandro Herrero
+ * @author [Alejandro Herrero]
  */
 public class user {
     /**

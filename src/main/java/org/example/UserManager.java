@@ -15,7 +15,7 @@ import java.util.*;
  * Clase que gestiona una lista de usuarios.
  * Permite añadir, buscar y listar usuarios, así como
  * guardar y cargar la información desde un archivo JSON.
- * @author Alejandro Herrero
+ * @author [Alejandro Herrero]
  */
 public class UserManager {
 
