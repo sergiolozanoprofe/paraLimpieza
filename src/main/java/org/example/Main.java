@@ -1,5 +1,5 @@
 package org.example;
-//Commit inicial
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,7 +7,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         UserManager manager = new UserManager();
         int Option = 0;
-
+        /** Parece que el programa es un gestor de usuarios.
+         *
+         * Lo primero que encontramos es un menú para añadir usuarios o encontrar existentes.
+         *
+         * @author Daniel Gómez Teruel
+         */
         do {
             System.out.println("");
             System.out.println("1. Añadir usuario");
@@ -15,6 +20,12 @@ public class Main {
             System.out.println("3. Listar usuarios");
             System.out.println("0. Salir");
             System.out.print("Elegir: ");
+
+            /** Esto es una parte del código que se asegura de que introduzcas un número entero y en caso contrario devuelve un mensaje.
+             *
+             * @author Daniel Gómez Teruel
+             */
+
             try {
                 Option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {

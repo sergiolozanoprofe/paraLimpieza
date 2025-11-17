@@ -1,6 +1,10 @@
 package org.example;
 
 import java.util.Date;
+/** Esta clase parece servir para almacenar el nombre de usuario y el email introducidos en el main.
+ *
+ * @author Daniel Gómez Teruel
+ */
 
 public class user {
 

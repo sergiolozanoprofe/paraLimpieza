@@ -11,7 +11,10 @@ import java.util.Optional;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
-
+/** Esta clase parece servir para gestionar los usuarios añadiéndolos a o leyéndolos de un JSON.
+ *
+ * @author Daniel Gómez Teruel
+ */
 public class UserManager {
 
     private Gson gson = new Gson();
