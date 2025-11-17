@@ -37,3 +37,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# Ignorar toda la carpeta target
+target/
+
+# Pero no ignorar target/apidocs
+!target/apidocs/
