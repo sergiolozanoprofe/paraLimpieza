@@ -2,6 +2,13 @@ package org.example;
 
 import java.util.Date;
 
+/**
+ * @author [wilmer Esau]
+ * a rama user suele usarse para trabajar en:
+ * la gestión de usuarios,
+ * autenticación, registro,
+ * perfiles, permisos…
+ */
 public class user {
 
     public static String COMPANY_NAME = "OpenAI";
