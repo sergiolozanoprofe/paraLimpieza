@@ -11,22 +11,18 @@ public class Main {
     public static void main(String[] args) {
         /**
          * Scanner para leer el texto escrito por el usuario
-         * @autor [Alejandro Herrero]
          */
         Scanner sc = new Scanner(System.in);
         /**
          * Objeto encargado de gestionar la lista de usuarios
-         * @autor [Alejandro Herrero]
          */
         UserManager manager = new UserManager();
         /**
          * Variable que guarda la opción seleccionada
-         * @autor [Alejandro Herrero]
          */
         int Option = 0;
         /**
          * Bucle del menú. Se repite hasta que ponga 0
-         * @autor [Alejandro Herrero]
          */
         do {
             System.out.println("");
@@ -38,7 +34,6 @@ public class Main {
             try {
                 /**
                  * Intenta convertir la entrada a número si no, da error.
-                 * @autor [Alejandro Herrero]
                  */
                 Option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
@@ -47,13 +42,11 @@ public class Main {
             System.out.println("");
             /**
              * Selección de la opción del menú a ejecutar
-             * @autor [Alejandro Herrero]
              */
             switch (Option) {
                 case 1:
                     /**
                      * Añade nuevo usuario y su email
-                     * @autor [Alejandro Herrero]
                      */
                     System.out.print("Nombre del usuario: ");
                     String name = sc.nextLine();
@@ -64,7 +57,6 @@ public class Main {
                 case 2:
                     /**
                      * Busca un usuario por su nombre
-                     * @autor [Alejandro Herrero]
                      */
                     System.out.print("Introduce el nombre de usuario: ");
                     String name2 = sc.nextLine();
@@ -77,21 +69,18 @@ public class Main {
                 case 3:
                     /**
                      * Muestra los usuarios almacenados
-                     * @autor [Alejandro Herrero]
                      */
                     manager.listUsers();
                     break;
                 case 0:
                     /**
                      * Sale del menú
-                     * @autor [Alejandro Herrero]
                      */
                     System.out.println("Bye!");
                     break;
                 default:
                     /**
                      * En caso de opción no válida
-                     * @autor [Alejandro Herrero]
                      */
                     System.out.println("Invalid option.");
             }
