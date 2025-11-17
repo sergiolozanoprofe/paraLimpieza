@@ -37,7 +37,7 @@ public class Main {
                                     System.out::println,
                                     () -> System.out.println("Usuario no encontrado.")
                             );
-
+                    break;
                 case 3:
                     manager.listUsers();
                     break;
