@@ -1,6 +1,6 @@
-kage org.example;
+package org.Jorge;
 
-import org.Jorge.Constantes;
+kage org.example;
 
 import java.util.Scanner;
 
@@ -11,8 +11,8 @@ public class Main {
         int Option = 0;
 
         do {
-            System.out.println("");
-            System.out.println(Constantes.Añadir);
+            System.out.println();
+            System.out.println(Constantes.Anadir);
             System.out.println(Constantes.Buscar);
             System.out.println(Constantes.Listar);
             System.out.println(Constantes.Salir);
@@ -22,7 +22,7 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Invalid input.");
             }
-            System.out.println("");
+            System.out.println();
             switch (Option) {
                 case 1:
                     procesarOpcion1(sc, gestor);
