@@ -2,12 +2,19 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * @author [wilmer esau]
+ * la clase main suele ser importante al momento de modificar y ver las cosas
+ * Facilita la depuración
+ * Si surge un error, puedes ver exactamente en qué commit se introdujo.
+ *  Mejor trabajo en equipo
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         UserManager manager = new UserManager();
         int Option = 0;
-
+     /**El bucle sirve como un menu para ayudar al usuario y ver que cosas puede hacer*/
         do {
             System.out.println("");
             System.out.println("1. Añadir usuario");
