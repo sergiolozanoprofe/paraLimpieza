@@ -11,7 +11,16 @@ import java.util.Optional;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
-
+/**
+ * @author [wilmer Esau]
+ *Permite desarrollar el módulo de usuarios por separado
+ * Todo lo relacionado con:
+ * creación de usuarios
+ * login y logout, validaciones
+ * roles y permisos
+ * gestión de perfiles
+ * administración de usuarios
+ * */
 public class UserManager {
 
     private Gson gson = new Gson();
