@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * @author fedi
+ * kzkdkezkdzjld
+ */
 public class UserManager {
 
     private Gson gson = new Gson();
